@@ -1,0 +1,923 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Decade Conference 2026 - Barcelona, Spain</title>
+    <meta name="description" content="2026 Ocean Decade Conference in Barcelona - Celebrating progress and setting priorities for the UN Decade of Ocean Science for Sustainable Development">
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #0077cc;
+            --accent-color: #00a8e8;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+            --white: #ffffff;
+            --font-size-base: 16px;
+            --line-height: 1.5;
+            --border-radius: 8px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+        }
+
+        html {
+            font-size: var(--font-size-base);
+            line-height: var(--line-height);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover, a:focus {
+            text-decoration: underline;
+        }
+
+        /* Layout Components */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: var(--spacing-sm) auto;
+        }
+
+        /* Header and Navigation */
+        .header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: var(--spacing-sm);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: var(--spacing-md);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: var(--spacing-xs) 0;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 87, 179, 0.8), rgba(0, 168, 232, 0.8)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400"><rect width="800" height="400" fill="%230056b3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .hero-date {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            min-height: 44px;
+            min-width: 44px;
+            font-size: 1rem;
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .btn-large {
+            padding: var(--spacing-md) var(--spacing-xl);
+            font-size: 1.125rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .organizers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .organizer-logo {
+            height: 60px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .organizer-logo:hover {
+            opacity: 1;
+        }
+
+        /* Schedule Section */
+        .schedule-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-size: 1rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            border-bottom-color: var(--accent-color);
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .schedule-item {
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .schedule-time {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Speakers Section */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .speaker-card {
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .speaker-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .speaker-info {
+            padding: var(--spacing-md);
+        }
+
+        .speaker-name {
+            font-weight: bold;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .speaker-title {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Registration Section */
+        .registration {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: bold;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        /* Feedback Section */
+        .feedback-options {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feedback-btn {
+            background: none;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-btn:hover, .feedback-btn.active {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .nps-scale {
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .nps-option {
+            text-align: center;
+        }
+
+        .nps-number {
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin: 0 auto var(--spacing-xs);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nps-number:hover, .nps-number.active {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: var(--white);
+            padding: var(--spacing-lg) 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-links a {
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Focus styles for keyboard navigation */
+        button:focus, 
+        input:focus, 
+        select:focus, 
+        textarea:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-color: #000080;
+                --secondary-color: #0000FF;
+                --accent-color: #FFA500;
+                --text-color: #000000;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 767px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: var(--spacing-lg);
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 0 0 var(--spacing-md) 0;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .section {
+                padding: var(--spacing-md) 0;
+            }
+
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feedback-options {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <!-- Placeholder for logo - in production, use actual logo images -->
+                    <div class="logo-text">Ocean Decade 2026</div>
+                </div>
+                
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    ☰
+                </button>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#schedule" class="nav-link">Schedule</a></li>
+                        <li class="nav-item"><a href="#speakers" class="nav-link">Speakers</a></li>
+                        <li class="nav-item"><a href="#registration" class="nav-link">Registration</a></li>
+                        <li class="nav-item"><a href="#feedback" class="nav-link">Feedback</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Ocean Decade Conference 2026</h1>
+                <p class="hero-subtitle">Celebrating progress and setting priorities for the UN Decade of Ocean Science for Sustainable Development</p>
+                <p class="hero-date">April 10-12, 2026 | Barcelona, Spain</p>
+                <a href="#registration" class="btn btn-large">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About the Conference</h2>
+                <div class="about-content">
+                    <div>
+                        <p>The 2026 Ocean Decade Conference in Barcelona will celebrate the progress made and set priorities for the remaining years of the UN Decade of Ocean Science for Sustainable Development (2021-2030).</p>
+                        <p>Hosted by the Government of Spain and co-organized with the Intergovernmental Oceanographic Commission of UNESCO, this landmark event aims to generate the "science we need for the ocean we want".</p>
+                        <p>The conference will focus on identifying science-based solutions for key challenges including climate change, biodiversity loss, pollution, food security, and building a sustainable ocean economy.</p>
+                    </div>
+                    <div>
+                        <h3>Organizers</h3>
+                        <div class="organizers">
+                            <!-- Placeholder for organizer logos -->
+                            <div>BarcelonaReAct</div>
+                            <div>UOC</div>
+                            <div>USAL</div>
+                            <div>URJC</div>
+                            <div>UNESCO</div>
+                        </div>
+                        
+                        <h3>Vision</h3>
+                        <p>To reverse declining ocean health and ensure science-based solutions for sustainable development and the 10 Ocean Decade Challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="section">
+            <div class="container">
+                <h2 class="section-title">Conference Schedule</h2>
+                
+                <div class="schedule-tabs">
+                    <button class="tab-btn active" data-day="day1">Day 1 - April 10</button>
+                    <button class="tab-btn" data-day="day2">Day 2 - April 11</button>
+                    <button class="tab-btn" data-day="day3">Day 3 - April 12</button>
+                </div>
+                
+                <div id="day1" class="tab-content active">
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:00 - 10:30</div>
+                        <h3>Opening Ceremony</h3>
+                        <p>Welcome addresses from organizing institutions and keynote speech</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:30 - 11:00</div>
+                        <h3>Coffee Break</h3>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:00 - 12:30</div>
+                        <h3>Plenary Session: Ocean Challenges</h3>
+                        <p>Overview of the 10 Ocean Decade Challenges</p>
+                    </div>
+                    <!-- More schedule items would go here -->
+                </div>
+                
+                <div id="day2" class="tab-content">
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:00 - 10:30</div>
+                        <h3>Parallel Sessions: Climate Solutions</h3>
+                        <p>Breakout sessions focusing on climate-related ocean science</p>
+                    </div>
+                    <!-- More schedule items would go here -->
+                </div>
+                
+                <div id="day3" class="tab-content">
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:00 - 10:30</div>
+                        <h3>Future Directions</h3>
+                        <p>Setting priorities for the remaining years of the Ocean Decade</p>
+                    </div>
+                    <!-- More schedule items would go here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers Section -->
+        <section id="speakers" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Speakers</h2>
+                <div class="speakers-grid">
+                    <!-- Speaker cards would go here -->
+                    <div class="speaker-card">
+                        <div class="speaker-image" style="background-color: #ddd;"></div>
+                        <div class="speaker-info">
+                            <div class="speaker-name">Dr. Maria Silva</div>
+                            <div class="speaker-title">Marine Biologist, UNESCO</div>
+                        </div>
+                    </div>
+                    <!-- More speaker cards -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="registration" class="section registration">
+            <div class="container">
+                <h2 class="section-title">Registration</h2>
+                <p>Secure your spot at the Ocean Decade Conference 2026</p>
+                
+                <form class="registration-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country" class="form-label">Country</label>
+                        <select id="country" class="form-input" required>
+                            <option value="">Select your country</option>
+                            <option value="ES">Spain</option>
+                            <option value="PT">Portugal</option>
+                            <option value="MA">Morocco</option>
+                            <option value="DZ">Algeria</option>
+                            <option value="TN">Tunisia</option>
+                            <option value="LY">Libya</option>
+                            <option value="EG">Egypt</option>
+                            <!-- More countries would be listed -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="organization" class="form-label">Organization</label>
+                        <input type="text" id="organization" class="form-input">
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Registration</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="section">
+            <div class="container">
+                <h2 class="section-title">Share Your Feedback</h2>
+                <p>Help us improve the conference experience</p>
+                
+                <div class="feedback-options">
+                    <button class="feedback-btn" data-rating="1">👍</button>
+                    <button class="feedback-btn" data-rating="2">👎</button>
+                    <button class="feedback-btn" data-rating="3">⭐</button>
+                    <button class="feedback-btn" data-rating="4">❤️</button>
+                </div>
+                
+                <h3>How likely are you to recommend this conference to others?</h3>
+                <div class="nps-scale">
+                    <div class="nps-option">
+                        <span class="nps-number" data-score="0">0</span>
+                        <span>Not at all</span>
+                    </div>
+                    <!-- More NPS options would go here -->
+                    <div class="nps-option">
+                        <span class="nps-number" data-score="10">10</span>
+                        <span>Extremely</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments" class="form-label">Additional Comments</label>
+                    <textarea id="comments" class="form-input" rows="4"></textarea>
+                </div>
+                
+                <button class="btn">Submit Feedback</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>Email: info@oceandecade2026.org</p>
+                    <p>Phone: +34 123 456 789</p>
+                    <p>Venue: Barcelona International Convention Center</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About the Conference</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#registration">Registration</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Organizers</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">BarcelonaReAct</a></li>
+                        <li><a href="#">UOC</a></li>
+                        <li><a href="#">USAL</a></li>
+                        <li><a href="#">URJC</a></li>
+                        <li><a href="#">UNESCO</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Ocean Decade Conference. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Schedule tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const day = btn.getAttribute('data-day');
+                document.getElementById(day).classList.add('active');
+            });
+        });
+
+        // Feedback functionality
+        const feedbackBtns = document.querySelectorAll('.feedback-btn');
+        const npsNumbers = document.querySelectorAll('.nps-number');
+        
+        feedbackBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                feedbackBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // In a real implementation, this would send the feedback to a server
+                console.log('Feedback submitted:', btn.getAttribute('data-rating'));
+            });
+        });
+        
+        npsNumbers.forEach(number => {
+            number.addEventListener('click', () => {
+                npsNumbers.forEach(n => n.classList.remove('active'));
+                number.classList.add('active');
+                
+                // In a real implementation, this would send the NPS score to a server
+                console.log('NPS score submitted:', number.getAttribute('data-score'));
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Simple form validation
+        const registrationForm = document.querySelector('.registration-form');
+        if (registrationForm) {
+            registrationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const country = document.getElementById('country').value;
+                
+                if (name && email && country) {
+                    // In a real implementation, this would submit the form data
+                    alert('Registration submitted successfully!');
+                    registrationForm.reset();
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
